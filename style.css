@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+/* 基本設定 */
+:root {
+    --primary-color: #4A90E2;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* ヘッダー */
+header {
+    background: linear-gradient(135deg, #4A90E2, #005cbf);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* コンテナ */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* 使い方ガイドセクション */
+.guide-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid #FFC107;
+}
+
+.guide-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-warning {
+    color: #FFC107;
+}
+
+.guide-steps {
+    list-style: none;
+}
+
+.guide-steps li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.step-icon {
+    color: #4A90E2;
+    margin-top: 3px;
+}
+
+/* アプリ一覧グリッド */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* アプリカード */
+.app-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app-card:active {
+    transform: scale(0.98);
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 12px;
+}
+
+.app-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.app-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.app-desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* ボタン */
+.launch-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+    transition: background 0.2s;
+}
+
+.launch-btn:hover {
+    background-color: #357abd;
+}
+
+/* 科目別カラー設定 */
+.color-1 { background-color: #FF6B6B; } /* リハビリ */
+.color-2 { background-color: #4ECDC4; } /* 臨床医学 */
+.color-3 { background-color: #FFE66D; color: #555; } /* 東洋医学 */
+.color-4 { background-color: #1A535C; } /* 法規 */
+.color-5 { background-color: #9B59B6; } /* 実技 */
+
+/* フッター */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* スマホ向けの微調整 */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem 0.8rem;
+    }
+    .app-card {
+        padding: 1.2rem;
+    }
+}
+
+/* =====================================
+   追加：カテゴリ見出し（学年ごとのタイトル）
+====================================== */
+.category-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 2.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-title i {
+    font-size: 1.2rem;
+}
